@@ -41,7 +41,7 @@ loss = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 metrics = tf.metrics.BinaryAccuracy()
 optimizer = optimization.create_optimizer(init_lr=init_lr, num_train_steps=num_train_steps, num_warmup_steps=num_warmup_steps, optimizer_type='adamw')
 model.compile(optimizer=optimizer, loss=loss, metrics=metrics)
-print(f'Training model with {tfhub_handle_encoder}')
+print('Training model with ', tfhub_handle_encoder)
 
 model.fit(x = train_ds, epochs = NUM_EPOCHS, validation_data = val_ds)
 model.evaluate(test_ds)
