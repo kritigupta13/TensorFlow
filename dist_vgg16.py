@@ -5,12 +5,16 @@ from keras.models import Model
 from keras.layers import Dense,Flatten
 from keras.applications.vgg16 import preprocess_input
 import os
+import sys
+
+print("Arguments count: ", len(sys.argv))
 
 BATCH = 64
 NUM_EPOCHS = 5
 
 with open('tf_config.json') as f:
   data = json.load(f)
+data['task']['index'] = sys.argv[1]
 os.environ['TF_CONFIG'] = data
 
 num_workers = len(data['cluster']['worker'])
