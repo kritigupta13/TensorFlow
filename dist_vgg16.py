@@ -6,6 +6,7 @@ from keras.layers import Dense,Flatten
 from keras.applications.vgg16 import preprocess_input
 import os
 import sys
+import json
 
 print("Arguments count: ", len(sys.argv))
 
