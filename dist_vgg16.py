@@ -16,7 +16,7 @@ NUM_EPOCHS = 5
 with open('tf_config.json') as f:
   data = json.load(f)
 data['task']['index'] = sys.argv[1]
-os.environ['TF_CONFIG'] = data
+os.environ['TF_CONFIG'] = json.dumps(data)
 
 num_workers = len(data['cluster']['worker'])
 global_batch_size = BATCH * num_workers
