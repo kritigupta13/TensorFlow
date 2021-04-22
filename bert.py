@@ -10,12 +10,12 @@ NUM_EPOCHS = 3
 init_lr = 3e-5
 
 #Creating subsets of data
-raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory(['aclImdb/train/pos', 'aclImdb/train/neg'], batch_size=BATCH, validation_split=0.2,
+raw_train_ds = tf.keras.preprocessing.text_dataset_from_directory('aclImdb/train', batch_size=BATCH, validation_split=0.2,
     subset='training', seed=seed)
 class_names = raw_train_ds.class_names
 train_ds = raw_train_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
-val_ds = tf.keras.preprocessing.text_dataset_from_directory(['aclImdb/train/pos', 'aclImdb/train/neg'], batch_size=BATCH, validation_split=0.2,
+val_ds = tf.keras.preprocessing.text_dataset_from_directory('aclImdb/train', batch_size=BATCH, validation_split=0.2,
     subset='validation', seed=seed)
 val_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
