@@ -32,7 +32,7 @@ print(len(train[0]), train[0][0].shape, train[0][1].shape, train[0][0][0].shape)
 
 strategy = tf.distribute.MultiWorkerMirroredStrategy()
 with strategy.scope():
-    model1 = tf.keras.applications.vgg16.VGG16(weights='imagenet', input_tensor=None,input_shape=train[0][0][0].shape, include_top=False)
+    model1 = tf.keras.applications.resnet.ResNet50(weights='imagenet', input_tensor=None,input_shape=train[0][0][0].shape, include_top=False)
     flatten = Flatten()
     new_layer1 = Dense(train[0][1].shape[1], activation='softmax', name='transfer_lr')
     input1 = model1.input
