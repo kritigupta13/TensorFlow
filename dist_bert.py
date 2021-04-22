@@ -14,7 +14,7 @@ print(fname, index)
 AUTOTUNE = tf.data.AUTOTUNE
 BATCH = 32
 seed = 42
-NUM_EPOCHS = 3
+NUM_EPOCHS = 1
 init_lr = 3e-5
 
 with open(fname) as f:
