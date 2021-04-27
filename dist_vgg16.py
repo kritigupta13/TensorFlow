@@ -12,7 +12,7 @@ fname = sys.argv[1]
 index = sys.argv[2]
 print(fname, index)
 BATCH = 64
-NUM_EPOCHS = 3
+NUM_EPOCHS = 1
 
 with open(fname) as f:
   data = json.load(f)
